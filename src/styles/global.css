@@ -29,13 +29,31 @@ p {
 /* Animation smooth pour les liens */
 a {
   transition: all 0.2s ease-in-out;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 a:visited,
 a:active,
-a:focus {
-  text-decoration: none;
+a:focus,
+a:hover {
+  text-decoration: none !important;
+}
+
+/* Retirer le soulignement des liens dans le header et les boutons */
+header a,
+nav a,
+button a,
+a.button,
+a[class*="bg-"] {
+  text-decoration: none !important;
+}
+
+header a:visited,
+nav a:visited,
+button a:visited,
+a.button:visited,
+a[class*="bg-"]:visited {
+  text-decoration: none !important;
 }
 
 /* Focus visible pour l'accessibilité */

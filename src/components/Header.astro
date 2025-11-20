@@ -46,7 +46,7 @@ const navItems = [
         {navItems.map((item) => (
           <a
             href={item.href}
-            class={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+            class={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 no-underline ${
               currentPath === item.href || (item.href !== baseUrl && currentPath.includes(item.href))
                 ? "bg-blue-600 text-white"
                 : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
@@ -56,8 +56,10 @@ const navItems = [
           </a>
         ))}
         <a
-          href="#rendez-vous"
-          class="px-5 py-2 bg-teal-500 text-white rounded-lg text-sm font-semibold hover:bg-teal-600 transition-colors shadow-sm hover:shadow-md"
+          href="https://www.doctolib.fr/centre-de-sante/aix-en-provence/santaix"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-5 py-2 bg-teal-500 text-white rounded-lg text-sm font-semibold hover:bg-teal-600 transition-colors shadow-sm hover:shadow-md no-underline"
         >
           Prendre RDV
         </a>
@@ -70,7 +72,7 @@ const navItems = [
         {navItems.map((item) => (
           <a
             href={item.href}
-            class={`px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+            class={`px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 no-underline ${
               currentPath === item.href || (item.href !== baseUrl && currentPath.includes(item.href))
                 ? "bg-blue-600 text-white"
                 : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
@@ -80,8 +82,10 @@ const navItems = [
           </a>
         ))}
         <a
-          href="#rendez-vous"
-          class="px-4 py-3 bg-teal-500 text-white rounded-lg text-base font-semibold hover:bg-teal-600 transition-colors shadow-sm text-center"
+          href="https://www.doctolib.fr/centre-de-sante/aix-en-provence/santaix"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-4 py-3 bg-teal-500 text-white rounded-lg text-base font-semibold hover:bg-teal-600 transition-colors shadow-sm text-center no-underline"
         >
           Prendre rendez-vous
         </a>
