@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Accès - Centre de Santé SANTAIX"
+  description="Comment accéder au Centre de Santé SANTAIX à Aix-en-Provence : adresse, transports en commun, parking"
+>
+  <Header />
+  
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-600 to-teal-500 py-12 md:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center text-white">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 px-2">Comment nous trouver</h1>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-50 px-2">
+            Accès, stationnement et transports en commun
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-12 md:py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
+            <!-- Carte -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div class="aspect-video bg-gray-200 relative">
+                <!-- Intégration Google Maps -->
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2892.845!2d5.4472!3d43.5263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c98dbe8b1234!2s195%20Boulevard%20Ferdinand%20de%20Lesseps%2C%2013090%20Aix-en-Provence!5e0!3m2!1sfr!2sfr!4v1234567890123!5m2!1sfr!2sfr"
+                  width="100%"
+                  height="100%"
+                  style="border:0;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  class="absolute inset-0"
+                ></iframe>
+              </div>
+              <div class="p-5 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold text-blue-900 mb-3 md:mb-4">Adresse</h2>
+                <p class="text-gray-700 mb-2">195 Boulevard Ferdinand de Lesseps</p>
+                <p class="text-gray-700 mb-4">13090 Aix-en-Provence</p>
+                <a
+                  href="https://maps.google.com/?q=195+Boulevard+Ferdinand+de+Lesseps+13090+Aix-en-Provence"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
+                >
+                  <span>📍</span>
+                  Ouvrir dans Google Maps
+                </a>
+              </div>
+            </div>
+
+            <!-- Informations pratiques -->
+            <div class="space-y-5 md:space-y-6">
+              <!-- Transports -->
+              <div class="bg-white rounded-xl shadow-lg p-5 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold text-blue-900 mb-3 md:mb-4 flex items-center gap-2">
+                  <span>🚇</span>
+                  Transports en commun
+                </h2>
+                <div class="text-gray-700">
+                  <p class="mb-2">
+                    <span class="font-semibold text-blue-800">Arrêts de bus</span> à proximité :
+                  </p>
+                  <ul class="space-y-1 ml-4 list-disc">
+                    <li>Lesseps Mairie (lignes 02 et 05)</li>
+                    <li>Archives (lignes 141 et M1)</li>
+                    <li>Mouret Gare Routière (ligne 15)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Parking -->
+              <div class="bg-white rounded-xl shadow-lg p-5 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold text-blue-900 mb-3 md:mb-4 flex items-center gap-2">
+                  <span>🅿️</span>
+                  Stationnement
+                </h2>
+                <div class="text-gray-700">
+                  <p class="mb-2">
+                    <span class="font-semibold text-blue-800">Parkings payants</span> disponibles à proximité :
+                  </p>
+                  <ul class="space-y-1 ml-4 list-disc">
+                    <li>Parking Renaissance (6 min - 400m)</li>
+                    <li>Parking Centraix/SuperU (8 min - 500m)</li>
+                    <li>Parking Rotonde (10 min - 700m)</li>
+                    <li>Parking Méjanes (10 min - 700m)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Vélo -->
+            </div>
+          </div>
+
+          <!-- Accessibilité -->
+          <div class="bg-gradient-to-br from-teal-50 to-blue-50 rounded-xl p-5 md:p-8 border border-teal-100">
+            <h2 class="text-xl md:text-2xl font-bold text-blue-900 mb-4 md:mb-6 flex items-center gap-2">
+              <span>♿</span>
+              Accessibilité
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-gray-700">
+              <div class="flex items-start gap-3">
+                <span class="text-green-600 font-bold text-xl">✓</span>
+                <div>
+                  <h3 class="font-semibold text-blue-800">Rez-de-chaussée</h3>
+                  <p>Accès de plain-pied</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-green-600 font-bold text-xl">✓</span>
+                <div>
+                  <h3 class="font-semibold text-blue-800">Entrée accessible</h3>
+                  <p>Accès facilité pour tous</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-green-600 font-bold text-xl">✓</span>
+                <div>
+                  <h3 class="font-semibold text-blue-800">Parking payant</h3>
+                  <p>À proximité immédiate</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-10 md:py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-xl sm:text-2xl font-bold text-blue-900 mb-3 md:mb-4 px-2">
+            Besoin d'aide pour venir ?
+          </h2>
+          <p class="text-sm sm:text-base text-gray-700 mb-5 md:mb-6 px-4">
+            Prenez rendez-vous facilement en ligne
+          </p>
+          <a
+            href="https://www.doctolib.fr/centre-de-sante/aix-en-provence/santaix"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block px-6 py-3 sm:px-8 bg-teal-500 text-white rounded-lg font-semibold hover:bg-teal-600 transition-colors text-sm sm:text-base"
+          >
+            📅 Réserver sur Doctolib
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+

@@ -1,0 +1,8 @@
+name,specialty,phone,email,appointmentUrl,description
+Dr. Marie Dupont,Médecin généraliste,01 23 45 67 89,dr.dupont@msp-exemple.fr,https://www.doctolib.fr/,Médecine générale et suivi des pathologies chroniques
+Sophie Martin,Infirmière,01 23 45 67 90,s.martin@msp-exemple.fr,,Soins infirmiers à domicile et au cabinet
+Jean Durand,Kinésithérapeute,01 23 45 67 91,j.durand@msp-exemple.fr,https://www.doctolib.fr/,Rééducation fonctionnelle et traumatologie du sport
+Dr. Claire Bernard,Pédiatre,01 23 45 67 92,dr.bernard@msp-exemple.fr,https://www.doctolib.fr/,Consultations pédiatriques de 0 à 18 ans
+Pierre Leroy,Ostéopathe,01 23 45 67 93,p.leroy@msp-exemple.fr,https://www.doctolib.fr/,Ostéopathie structurelle et fonctionnelle
+Isabelle Moreau,Psychologue,01 23 45 67 94,i.moreau@msp-exemple.fr,https://www.doctolib.fr/,Thérapie individuelle pour enfants et adultes
+

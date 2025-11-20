@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PractitionerCard from '../components/PractitionerCard.astro';
+
+// Liste des praticiens du Centre de Santé SANTAIX
+const practitioners = [
+  {
+    name: "Dr Patrick CAVANNA",
+    specialty: "Médecin généraliste",
+    description: "Médecine générale, suivi des patients de l'enfance à l'âge adulte"
+  },
+  {
+    name: "Dr Mahfoud HADDAD",
+    specialty: "Médecin généraliste",
+    description: "Médecine générale, médecin traitant"
+  },
+  {
+    name: "Dr Fabien PENA",
+    specialty: "Médecin échographiste",
+    description: "Échographie médicale et diagnostique"
+  }
+];
+---
+
+<Layout 
+  title="Notre équipe - Centre de Santé SANTAIX"
+  description="Découvrez l'équipe médicale du Centre de Santé SANTAIX à Aix-en-Provence"
+>
+  <Header />
+  
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-600 to-teal-500 py-12 md:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center text-white">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 px-2">Notre équipe médicale</h1>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-50 px-2">
+            Des médecins expérimentés pour vous accompagner
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Practitioners Grid -->
+    <section class="py-12 md:py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4">
+        {practitioners.length > 0 ? (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-7xl mx-auto">
+            {practitioners.map((practitioner) => (
+              <PractitionerCard {...practitioner} />
+            ))}
+          </div>
+        ) : (
+          <div class="text-center py-12">
+            <p class="text-gray-600 text-lg">
+              Les informations sur les praticiens seront bientôt disponibles.
+            </p>
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- Info Box -->
+    <section class="py-10 md:py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-3xl mx-auto bg-blue-50 rounded-xl p-5 md:p-8 border border-blue-100">
+          <h2 class="text-xl sm:text-2xl font-bold text-blue-900 mb-3 md:mb-4">
+            💡 Informations pratiques
+          </h2>
+          <div class="space-y-3 text-gray-700">
+            <p>
+              ✓ <strong>Établissement conventionné</strong> - Carte Vitale acceptée
+            </p>
+            <p>
+              ✓ <strong>Tiers payant</strong> : Sécurité sociale
+            </p>
+            <p>
+              ✓ <strong>Moyens de paiement</strong> : Chèques, espèces, carte bancaire et virement
+            </p>
+            <p>
+              ✓ <strong>Langues parlées</strong> : Français, Anglais, Arabe
+            </p>
+          </div>
+          <div class="mt-6 pt-6 border-t border-blue-200">
+            <a href="https://www.doctolib.fr/centre-de-sante/aix-en-provence/santaix" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 bg-teal-500 text-white rounded-lg font-semibold hover:bg-teal-600 transition-colors">
+              Prendre rendez-vous sur Doctolib
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+

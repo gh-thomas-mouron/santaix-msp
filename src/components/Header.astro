@@ -1,0 +1,112 @@
+---
+const currentPath = Astro.url.pathname;
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
+
+const navItems = [
+  { name: "Accueil", href: baseUrl },
+  { name: "Notre équipe", href: baseUrl + "equipe" },
+  { name: "Accès", href: baseUrl + "acces" },
+];
+---
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="mx-auto px-4 py-3 max-w-7xl">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href={baseUrl} class="flex items-center gap-3 flex-shrink-0 hover:opacity-80 transition-opacity no-underline">
+        <img 
+          src={`${baseUrl}logo-santaix.png`}
+          alt=""
+          class="h-12 md:h-14 w-auto"
+        />
+        <div class="flex flex-col items-center justify-center -space-y-0.5">
+          <span class="text-[#206794] text-2xl md:text-3xl font-semibold tracking-wide leading-tight" style="font-family: 'Quicksand', sans-serif;">
+            SANTAIX
+          </span>
+          <span class="text-[#206794] text-xs md:text-sm font-medium -mt-0.5" style="font-family: 'Quicksand', sans-serif; letter-spacing: 0.05em;">
+            CENTRE MÉDICAL
+          </span>
+        </div>
+      </a>
+
+      <!-- Menu hamburger (mobile uniquement) -->
+      <button 
+        id="mobile-menu-button"
+        class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Navigation desktop -->
+      <div class="hidden md:flex items-center gap-4">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+              currentPath === item.href || (item.href !== baseUrl && currentPath.includes(item.href))
+                ? "bg-blue-600 text-white"
+                : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+            }`}
+          >
+            {item.name}
+          </a>
+        ))}
+        <a
+          href="#rendez-vous"
+          class="px-5 py-2 bg-teal-500 text-white rounded-lg text-sm font-semibold hover:bg-teal-600 transition-colors shadow-sm hover:shadow-md"
+        >
+          Prendre RDV
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation mobile (hidden par défaut) -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
+      <div class="flex flex-col gap-2">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class={`px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+              currentPath === item.href || (item.href !== baseUrl && currentPath.includes(item.href))
+                ? "bg-blue-600 text-white"
+                : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+            }`}
+          >
+            {item.name}
+          </a>
+        ))}
+        <a
+          href="#rendez-vous"
+          class="px-4 py-3 bg-teal-500 text-white rounded-lg text-base font-semibold hover:bg-teal-600 transition-colors shadow-sm text-center"
+        >
+          Prendre rendez-vous
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Toggle mobile menu
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
+</script>
+
