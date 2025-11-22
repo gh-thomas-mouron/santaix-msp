@@ -85,6 +85,38 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
       </div>
     </section>
 
+    <!-- Welcome Section with Photos -->
+    <section class="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <!-- Photo salle d'attente -->
+          <div class="order-2 lg:order-1 flex justify-center lg:justify-start">
+            <div class="rounded-2xl shadow-xl overflow-hidden aspect-square max-w-md w-full">
+              <img 
+                src={`${baseUrl}galerie/salle-attente-square.jpg`}
+                alt="Salle d'attente moderne et confortable"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          
+          <!-- Texte -->
+          <div class="order-1 lg:order-2">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-900 mb-4 md:mb-6 text-center md:text-left">
+              Un accueil chaleureux et professionnel
+            </h2>
+            <p class="text-base sm:text-lg text-gray-700 mb-4 leading-relaxed">
+              Au Centre de Santé SANTAIX, nous mettons tout en œuvre pour vous offrir un environnement accueillant et rassurant. Notre équipe est à votre écoute pour vous accompagner dans vos démarches de santé.
+            </p>
+            <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+              Des locaux modernes, fraîchement rénovés et bien équipés vous attendent pour votre confort et votre bien-être.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
     <section id="rendez-vous" class="py-12 md:py-16 bg-gradient-to-r from-blue-600 to-teal-500">
       <div class="max-w-7xl mx-auto px-4 text-center">
@@ -105,32 +137,47 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
       </div>
     </section>
 
-    <!-- Info Section -->
-    <section class="py-12 md:py-16 bg-gray-50">
+    <!-- Info Section with Photo -->
+    <section class="py-12 md:py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-6xl mx-auto">
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-blue-900 mb-8 md:mb-12 px-2">
             Informations pratiques
           </h2>
           
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            <div class="bg-white rounded-xl p-5 md:p-6 shadow-md">
-              <h3 class="text-lg sm:text-xl font-bold text-blue-900 mb-3 md:mb-4">📍 Nous trouver</h3>
-              <p class="text-gray-700 mb-2">195 Boulevard Ferdinand de Lesseps</p>
-              <p class="text-gray-700 mb-4">13090 Aix-en-Provence</p>
-              <a href={baseUrl + "acces"} class="text-teal-600 hover:text-teal-700 font-medium">
-                → Voir le plan d'accès
-              </a>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+            <!-- Photo extérieure -->
+            <div class="lg:col-span-1">
+              <div class="rounded-xl shadow-lg overflow-hidden h-full">
+                <img 
+                  src={`${baseUrl}galerie/exterieur.jpg`}
+                  alt="Vue extérieure du Centre de Santé SANTAIX"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
+            
+            <!-- Informations -->
+            <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              <div class="bg-gradient-to-br from-blue-50 to-teal-50 rounded-xl p-5 md:p-6 shadow-md">
+                <h3 class="text-lg sm:text-xl font-bold text-blue-900 mb-3 md:mb-4">📍 Nous trouver</h3>
+                <p class="text-gray-700 mb-2">195 Boulevard Ferdinand de Lesseps</p>
+                <p class="text-gray-700 mb-4">13090 Aix-en-Provence</p>
+                <a href={baseUrl + "acces"} class="text-teal-600 hover:text-teal-700 font-medium">
+                  → Voir le plan d'accès
+                </a>
+              </div>
 
-            <div class="bg-white rounded-xl p-5 md:p-6 shadow-md">
-              <h3 class="text-lg sm:text-xl font-bold text-blue-900 mb-3 md:mb-4">📅 Prendre RDV</h3>
-              <p class="text-gray-700 mb-4">
-                Prenez rendez-vous en ligne facilement sur Doctolib
-              </p>
-              <a href="https://www.doctolib.fr/centre-de-sante/aix-en-provence/santaix" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition-colors font-medium no-underline">
-                Réserver en ligne
-              </a>
+              <div class="bg-gradient-to-br from-blue-50 to-teal-50 rounded-xl p-5 md:p-6 shadow-md">
+                <h3 class="text-lg sm:text-xl font-bold text-blue-900 mb-3 md:mb-4">📅 Prendre RDV</h3>
+                <p class="text-gray-700 mb-4">
+                  Prenez rendez-vous en ligne facilement sur Doctolib
+                </p>
+                <a href="https://www.doctolib.fr/centre-de-sante/aix-en-provence/santaix" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition-colors font-medium no-underline">
+                  Réserver en ligne
+                </a>
+              </div>
             </div>
           </div>
         </div>
