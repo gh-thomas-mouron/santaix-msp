@@ -5,7 +5,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
 
 <footer class="bg-blue-900 text-white mt-auto">
   <div class="max-w-7xl mx-auto px-4 py-10 md:py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start">
       <!-- Contact -->
       <div>
         <h3 class="text-lg sm:text-xl font-semibold mb-3 md:mb-4">Contact</h3>
@@ -18,12 +18,51 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
       </div>
 
       <!-- Horaires -->
-      <div>
+      <div class="flex flex-col">
         <h3 class="text-lg sm:text-xl font-semibold mb-3 md:mb-4">Horaires</h3>
-        <div class="space-y-1 text-blue-100">
-          <p>Lundi - Vendredi : 8h30 - 19h30</p>
-          <p>Samedi : 9h - 13h</p>
-          <p class="text-xs mt-2">Consultez Doctolib pour les horaires détaillés</p>
+        <div class="text-blue-100 text-sm flex flex-col gap-1">
+          <div class="flex gap-2">
+            <span class="w-20 flex-shrink-0">Lundi:</span>
+            <span class="w-14 flex-shrink-0 text-right">08h30</span>
+            <span>-</span>
+            <span>19h30</span>
+          </div>
+          <div class="flex gap-2">
+            <span class="w-20 flex-shrink-0">Mardi:</span>
+            <span class="w-14 flex-shrink-0 text-right">11h00</span>
+            <span>-</span>
+            <span>18h00</span>
+          </div>
+          <div class="flex gap-2">
+            <span class="w-20 flex-shrink-0">Mercredi:</span>
+            <span class="w-14 flex-shrink-0 text-right">08h30</span>
+            <span>-</span>
+            <span>20h00</span>
+          </div>
+          <div class="flex gap-2">
+            <span class="w-20 flex-shrink-0">Jeudi:</span>
+            <span class="w-14 flex-shrink-0 text-right">08h30</span>
+            <span>-</span>
+            <span>19h30</span>
+          </div>
+          <div class="flex gap-2">
+            <span class="w-20 flex-shrink-0">Vendredi:</span>
+            <span class="w-14 flex-shrink-0 text-right">09h00</span>
+            <span>-</span>
+            <span>19h00</span>
+          </div>
+          <div class="flex gap-2">
+            <span class="w-20 flex-shrink-0">Samedi:</span>
+            <span class="w-14 flex-shrink-0 text-right">08h00</span>
+            <span>-</span>
+            <span>20h00</span>
+          </div>
+          <div class="flex gap-2">
+            <span class="w-20 flex-shrink-0">Dimanche:</span>
+            <span class="w-14 flex-shrink-0 text-right">09h00</span>
+            <span>-</span>
+            <span>20h00</span>
+          </div>
         </div>
       </div>
 
