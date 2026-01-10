@@ -6,10 +6,12 @@ import practitionersJson from '../../data/practitioners.json';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 
-// Load practitioners data
-const allPractitioners = Array.isArray(practitionersJson) ? practitionersJson : (practitionersJson as any).default || [];
-
 export async function getStaticPaths() {
+  // Load data directly inside getStaticPaths - handle both array and default export
+  const allPractitioners = Array.isArray(practitionersJson) 
+    ? practitionersJson 
+    : (practitionersJson as any).default || [];
+  
   const slugs = allPractitioners.map((p: any) => p.slug);
   return slugs.map((slug: string) => ({
     params: { slug },
@@ -17,7 +19,11 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-const practitioner = allPractitioners.find((p: any) => p.slug === slug);
+// Load practitioners data for component rendering
+const allPractitionersData = Array.isArray(practitionersJson) 
+  ? practitionersJson 
+  : (practitionersJson as any).default || [];
+const practitioner = allPractitionersData.find((p: any) => p.slug === slug);
 
 if (!practitioner) {
   return Astro.redirect(baseUrl + 'equipe');
@@ -76,11 +82,11 @@ if (imageUrl && !imageUrl.startsWith('http') && !imageUrl.startsWith('/')) {
     </section>
 
     <!-- Tabs Navigation -->
-    {allPractitioners.length > 1 && (
+    {allPractitionersData.length > 1 && (
       <section class="py-8 bg-white border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4">
           <div class="flex flex-wrap justify-center gap-2 md:gap-4">
-            {allPractitioners.map((p) => (
+            {allPractitionersData.map((p) => (
               <a
                 href={baseUrl + `equipe/${p.slug}`}
                 class={`px-4 py-2 rounded-lg font-medium transition-colors no-underline ${

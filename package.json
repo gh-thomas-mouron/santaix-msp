@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "fetch-practitioners": "node scripts/fetch-practitioners.js",
-    "dev:fetch": "npm run fetch-practitioners && npm run dev"
+    "dev:fetch": "npm run fetch-practitioners && npm run dev",
+    "test-build": "bash scripts/test-build.sh"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
