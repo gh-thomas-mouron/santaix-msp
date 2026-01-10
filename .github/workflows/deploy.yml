@@ -44,6 +44,14 @@ jobs:
         run: npm ci
         working-directory: ${{ env.BUILD_PATH }}
       
+      - name: Fetch practitioners data from Google Sheets
+        run: |
+          node scripts/fetch-practitioners.js
+        working-directory: ${{ env.BUILD_PATH }}
+        env:
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID || '1KkLZegPui5GCO6ZQ3MJsP79sjTOKUsurs16h-4F_duA' }}
+          GOOGLE_SHEET_GID: ${{ secrets.GOOGLE_SHEET_GID || '1625347087' }}
+      
       - name: Build with Astro
         run: |
           npm run build \

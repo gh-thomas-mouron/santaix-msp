@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Dr Patrick CAVANNA",
+    "specialty": "Médecin généraliste",
+    "pictureUrl": "https://media.doctolib.com/image/upload/q_auto:eco,f_auto,w_1024,h_700,c_limit/aue67xptt6bepbtp9tr6.jpg",
+    "slug": "patrick_cavanna"
+  },
+  {
+    "name": "Dr Mahfoud HADDAD",
+    "specialty": "Médecin généraliste",
+    "pictureUrl": "https://media.licdn.com/dms/image/v2/C4D03AQEyxTrBMSoQnQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1525615197921?e=1769644800&v=beta&t=Q7XXFanCyRj5zQ8ClRO59IAwILHl7_kWtTEdUB1dhoU",
+    "slug": "mahfoud_haddad"
+  },
+  {
+    "name": "Dr Fabien PENA",
+    "specialty": "Médecin échographiste",
+    "pictureUrl": "public/praticiens/fabien_pena.jpg",
+    "slug": "fabien_pena"
+  }
+]

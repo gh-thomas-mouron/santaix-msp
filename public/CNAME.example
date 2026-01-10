@@ -1,0 +1,13 @@
+# Template pour le fichier CNAME
+# 
+# Instructions :
+# 1. Renommez ce fichier en "CNAME" (sans extension)
+# 2. Remplacez "votre-domaine.fr" par votre vrai nom de domaine
+# 3. Si vous utilisez www, utilisez "www.votre-domaine.fr"
+#
+# Exemple :
+# maison-sante-santaix.fr
+# ou
+# www.maison-sante-santaix.fr
+
+votre-domaine.fr
