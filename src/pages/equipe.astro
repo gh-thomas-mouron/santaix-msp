@@ -31,8 +31,8 @@ const practitioners = practitionersData.map(p => {
 ---
 
 <Layout 
-  title="Notre équipe - Centre de Santé SANTAIX"
-  description="Découvrez l'équipe médicale du Centre de Santé SANTAIX à Aix-en-Provence"
+  title="Notre équipe"
+  description="Découvrez l'équipe médicale du Centre de Santé SANTAIX à Aix-en-Provence : médecins généralistes et échographistes."
 >
   <Header />
   
@@ -56,7 +56,7 @@ const practitioners = practitionersData.map(p => {
           <>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-7xl mx-auto">
               {practitioners.map((practitioner) => (
-                <a href={baseUrl + `equipe/${practitioner.slug}`} class="no-underline">
+                <a href={baseUrl + `equipe/${practitioner.slug}`} title={`${practitioner.name}, ${practitioner.specialty} - SANTAIX`} class="no-underline">
                   <PractitionerCard {...practitioner} />
                 </a>
               ))}

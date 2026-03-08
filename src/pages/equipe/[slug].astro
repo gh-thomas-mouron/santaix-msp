@@ -40,7 +40,7 @@ if (imageUrl && !imageUrl.startsWith('http') && !imageUrl.startsWith('/')) {
 ---
 
 <Layout 
-  title={`${practitioner.name} - ${practitioner.specialty} - Centre de Santé SANTAIX`}
+  title={`${practitioner.name} - ${practitioner.specialty}`}
   description={`${practitioner.name}, ${practitioner.specialty} au Centre de Santé SANTAIX à Aix-en-Provence`}
 >
   <Header />
@@ -66,7 +66,7 @@ if (imageUrl && !imageUrl.startsWith('http') && !imageUrl.startsWith('/')) {
             <div class="flex justify-center mb-8">
               <img 
                 src={imageUrl}
-                alt={practitioner.name}
+                alt={`${practitioner.name}, ${practitioner.specialty} - Centre SANTAIX Aix-en-Provence`}
                 class="w-48 h-48 rounded-full object-cover border-4 border-blue-100"
                 onerror="this.style.display='none'"
               />
@@ -89,6 +89,7 @@ if (imageUrl && !imageUrl.startsWith('http') && !imageUrl.startsWith('/')) {
             {allPractitionersData.map((p) => (
               <a
                 href={baseUrl + `equipe/${p.slug}`}
+                title={`${p.name}, ${p.specialty} - SANTAIX`}
                 class={`px-4 py-2 rounded-lg font-medium transition-colors no-underline ${
                   p.slug === slug
                     ? 'bg-blue-600 text-white'
@@ -100,6 +101,7 @@ if (imageUrl && !imageUrl.startsWith('http') && !imageUrl.startsWith('/')) {
             ))}
             <a
               href={baseUrl + 'equipe'}
+              title="Voir toute l'équipe médicale SANTAIX"
               class={`px-4 py-2 rounded-lg font-medium transition-colors no-underline ${
                 slug === undefined
                   ? 'bg-blue-600 text-white'

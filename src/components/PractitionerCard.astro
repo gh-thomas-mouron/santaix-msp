@@ -17,7 +17,7 @@ const { name, specialty, description, imageUrl } = Astro.props;
       <div class="mb-4 flex justify-center">
         <img 
           src={imageUrl}
-          alt={name}
+          alt={`Photo de ${name}, ${specialty} au Centre SANTAIX Aix-en-Provence`}
           class="w-32 h-32 rounded-full object-cover border-4 border-blue-100"
         />
       </div>

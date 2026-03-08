@@ -6,7 +6,10 @@ import Footer from '../components/Footer.astro';
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 ---
 
-<Layout title="Accueil - Centre de Santé SANTAIX">
+<Layout
+  title="Accueil"
+  description="SANTAIX Maison de Santé à Aix-en-Provence : médecin généraliste, échographie et urgences de proximité. Prenez RDV en ligne."
+>
   <Header />
   
   <main class="flex-grow">
@@ -15,15 +18,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
       <div class="max-w-7xl mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-900 mb-4 md:mb-6 leading-tight px-2">
-            Bienvenue au
-            <span class="block sm:inline text-teal-600">Centre de Santé SANTAIX</span>
+            Centre de Santé & Échographie à Aix-en-Provence
           </h1>
           <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-6 md:mb-8 px-2">
-            Votre centre de santé au cœur d'Aix-en-Provence
+            <span class="text-teal-600 font-semibold">SANTAIX</span> — Votre maison de santé au cœur d'Aix-en-Provence
           </p>
           <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
             <a
               href={baseUrl + "equipe"}
+              title="Découvrir notre équipe médicale - SANTAIX"
               class="px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl text-base sm:text-lg no-underline"
             >
               Découvrir notre équipe
@@ -51,7 +54,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
     <section class="py-12 md:py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4">
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-blue-900 mb-8 md:mb-12 px-2">
-          Une prise en charge complète
+          Médecine Générale, Échographie et Urgences de proximité
         </h2>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
@@ -76,7 +79,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
           <!-- Service 3 -->
           <div class="bg-gradient-to-br from-blue-50 to-teal-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
             <div class="text-4xl mb-4">🩺</div>
-            <h3 class="text-xl font-bold text-blue-900 mb-3">Petites urgences</h3>
+            <h3 class="text-xl font-bold text-blue-900 mb-3">Urgences de proximité</h3>
             <p class="text-gray-700">
               Traumatologie, sutures, contentions, soins et pansements de plaie.
             </p>
@@ -94,7 +97,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
             <div class="rounded-2xl shadow-xl overflow-hidden aspect-square max-w-md w-full">
               <img 
                 src={`${baseUrl}galerie/salle-attente-square.jpg`}
-                alt="Salle d'attente moderne et confortable"
+                alt="Salle d'attente du Centre de Santé SANTAIX à Aix-en-Provence"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -151,7 +154,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
               <div class="rounded-xl shadow-lg overflow-hidden h-full">
                 <img 
                   src={`${baseUrl}galerie/exterieur.jpg`}
-                  alt="Vue extérieure du Centre de Santé SANTAIX"
+                  alt="Façade du cabinet médical SANTAIX, 195 Bd Ferdinand de Lesseps, Aix-en-Provence"
                   class="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -161,10 +164,10 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
             <!-- Informations -->
             <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div class="bg-gradient-to-br from-blue-50 to-teal-50 rounded-xl p-5 md:p-6 shadow-md">
-                <h3 class="text-lg sm:text-xl font-bold text-blue-900 mb-3 md:mb-4">📍 Nous trouver</h3>
+                <h3 class="text-lg sm:text-xl font-bold text-blue-900 mb-3 md:mb-4">Cabinet médical Lesseps</h3>
                 <p class="text-gray-700 mb-2">195 Boulevard Ferdinand de Lesseps</p>
                 <p class="text-gray-700 mb-4">13090 Aix-en-Provence</p>
-                <a href={baseUrl + "acces"} class="text-teal-600 hover:text-teal-700 font-medium">
+                <a href={baseUrl + "acces"} title="Plan d'accès au cabinet médical SANTAIX à Aix-en-Provence" class="text-teal-600 hover:text-teal-700 font-medium">
                   → Voir le plan d'accès
                 </a>
               </div>

@@ -2,10 +2,53 @@
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = "Centre de Santé SANTAIX à Aix-en-Provence - Médecine générale et échographie" } = Astro.props;
+const SITE = 'https://santaix.fr';
+const TITLE_SUFFIX = ' | SANTAIX Maison de Santé Aix-en-Provence';
+const DEFAULT_DESCRIPTION = "SANTAIX Maison de Santé à Aix-en-Provence : médecin généraliste, échographie et urgences de proximité. Prenez RDV en ligne.";
+const OG_IMAGE = SITE + '/logo-santaix.png';
+
+const { title, description = DEFAULT_DESCRIPTION, image } = Astro.props;
+const fullTitle = title.includes('|') ? title : title + TITLE_SUFFIX;
+const ogImage = image ? (image.startsWith('http') ? image : SITE + (image.startsWith('/') ? image : '/' + image)) : OG_IMAGE;
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL;
+
+const openingHoursSchema = [
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "08:30", "closes": "19:30" },
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "11:00", "closes": "18:00" },
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "08:30", "closes": "20:00" },
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "08:30", "closes": "19:30" },
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "19:00" },
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "20:00" },
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "20:00" },
+];
+
+const medicalBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "SANTAIX",
+  "alternateName": "SANTAIX Maison de Santé",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "195 Bd Ferdinand de Lesseps",
+    "addressLocality": "Aix-en-Provence",
+    "postalCode": "13090",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.5263,
+    "longitude": 5.4370
+  },
+  "telephone": "04 42 20 33 33",
+  "medicalSpecialty": [
+    "https://health-lifesci.schema.org/GeneralMedicalPractice",
+    "https://health-lifesci.schema.org/DiagnosticImaging"
+  ],
+  "openingHoursSpecification": openingHoursSchema
+};
 ---
 
 <!doctype html>
@@ -16,7 +59,16 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href={`${baseUrl}/logo-santaix.png`} />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{fullTitle}</title>
+    <!-- OpenGraph -->
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:locale" content="fr_FR" />
+    <!-- JSON-LD MedicalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify(medicalBusinessSchema)}></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@400;600;700&family=Nunito:wght@400;600;700&family=Poppins:wght@400;600;700&family=Raleway:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -28,4 +80,3 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
     <slot />
   </body>
 </html>
-
